@@ -1283,6 +1283,8 @@ let app = document.createElement("div");
 let stats = document.createElement("div");
 let themeParagraph = document.createElement("p");
 themeParagraph.textContent = "Tema: " + questions[i].theme
+let iQuestion = document.createElement("p");
+iQuestion.textContent = "Spørgsmål " + i + "/" + questions.length
 
 let question = document.createElement("p");
 question.textContent = questions[i].question
@@ -1296,6 +1298,7 @@ for (const answ of questions[i].answers) {
 }
 
 stats.appendChild(themeParagraph)
+stats.appendChild(iQuestion)
 
 let nextButton = document.createElement("button");
 nextButton.textContent = "Næste spørgsmål"
@@ -1344,7 +1347,7 @@ randomButton.addEventListener("click", () =>  {
 })
 
 let revealButton = document.createElement("button");
-nextButton.textContent = "Vis svar"
+revealButton.textContent = "Vis svar"
 revealButton.addEventListener("click", () => {
     answer.hidden = false
 })
