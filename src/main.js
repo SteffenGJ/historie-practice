@@ -1284,7 +1284,7 @@ let stats = document.createElement("div");
 let themeParagraph = document.createElement("p");
 themeParagraph.textContent = "Tema: " + questions[i].theme
 let iQuestion = document.createElement("p");
-iQuestion.textContent = "Spørgsmål " + i + "/" + questions.length
+iQuestion.textContent = "Spørgsmål " + (i + 1) + "/" + (questions.length + 1)
 
 let question = document.createElement("p");
 question.textContent = questions[i].question
@@ -1310,6 +1310,7 @@ nextButton.addEventListener("click", () =>  {
         question.textContent = questions[i].question
         answer.hidden = true;
         for (const child of answer.children) {
+            console.log("REMOVING A CHILD: ", child)
             answer.removeChild(child)
         }
         for (const answ of questions[i].answers) {
