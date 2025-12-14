@@ -1309,12 +1309,13 @@ nextButton.addEventListener("click", () =>  {
         iQuestion.textContent = "Spørgsmål " + i + "/" + questions.length
         question.textContent = questions[i].question
         answer.hidden = true;
-        console.log(answer.children)
-        console.log(answer.childNodes)
-        for (const child of answer.children) {
-            console.log("REMOVING A CHILD: ", child)
-            answer.removeChild(child)
-        }
+        // console.log(answer.children)
+        // console.log(answer.childNodes)
+        // for (const child of answer.children) {
+        //     console.log("REMOVING A CHILD: ", child)
+        //     answer.removeChild(child)
+        // }
+        answer.innerHTML = "";
         for (const answ of questions[i].answers) {
             let li = document.createElement("li")
             li.textContent = answ
