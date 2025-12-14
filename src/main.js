@@ -1306,8 +1306,12 @@ nextButton.addEventListener("click", () =>  {
     if (i < questions.length) {
         i++
         themeParagraph.textContent = "Tema: " + questions[i].theme
+        iQuestion.textContent = "Spørgsmål " + i + "/" + questions.length
         question.textContent = questions[i].question
         answer.hidden = true;
+        for (const child of answer.children) {
+            answer.removeChild(child)
+        }
         for (const answ of questions[i].answers) {
             let li = document.createElement("li")
             li.textContent = answ
@@ -1322,8 +1326,12 @@ previousButton.addEventListener("click", () =>  {
     if (i > 0) {
         i--
         themeParagraph.textContent = "Tema: " + questions[i].theme
+        iQuestion.textContent = "Spørgsmål " + i + "/" + questions.length
         question.textContent = questions[i].question
         answer.hidden = true;
+        for (const child of answer.children) {
+            answer.removeChild(child)
+        }
         for (const answ of questions[i].answers) {
             let li = document.createElement("li")
             li.textContent = answ
@@ -1337,8 +1345,12 @@ randomButton.textContent = "Tilfældigt spørgsmål"
 randomButton.addEventListener("click", () =>  {
     i = Math.floor(Math.random() * questions.length)
     themeParagraph.textContent = "Tema: " + questions[i].theme
+    iQuestion.textContent = "Spørgsmål " + i + "/" + questions.length
     question.textContent = questions[i].question
     answer.hidden = true;
+    for (const child of answer.children) {
+        answer.removeChild(child)
+    }
     for (const answ of questions[i].answers) {
         let li = document.createElement("li")
         li.textContent = answ
